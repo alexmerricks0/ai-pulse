@@ -26,10 +26,10 @@ export async function fetchHNStories(): Promise<HNStory[]> {
   const topIds = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
     .then((r) => r.json<number[]>());
 
-  const top60 = topIds.slice(0, 60);
+  const top30 = topIds.slice(0, 30);
 
   const stories = await Promise.all(
-    top60.map((id) =>
+    top30.map((id) =>
       fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
         .then((r) => r.json<HNStory>()),
     ),

@@ -8,23 +8,23 @@ crons = ["0 7 * * *"]
 [[d1_databases]]
 binding = "DB"
 database_name = "ai-pulse-db"
-database_id = "TBD"
+database_id = "9b0d35d9-b64c-4beb-98b9-f2034d964eaa"
 
 [vars]
 ENVIRONMENT = "development"
-ALLOWED_ORIGINS = "http://localhost:5173,https://ai.lfxai.dev,https://ai-pulse.pages.dev"
+ALLOWED_ORIGINS = "http://localhost:5173,https://ai.lfxai.dev,https://ai-pulse-7ud.pages.dev"
 
 [env.production]
 name = "ai-pulse-worker"
 
 [env.production.vars]
 ENVIRONMENT = "production"
-ALLOWED_ORIGINS = "https://ai.lfxai.dev,https://ai-pulse.pages.dev"
+ALLOWED_ORIGINS = "https://ai.lfxai.dev,https://ai-pulse-7ud.pages.dev"
 
 [[env.production.d1_databases]]
 binding = "DB"
 database_name = "ai-pulse-db"
-database_id = "TBD"
+database_id = "9b0d35d9-b64c-4beb-98b9-f2034d964eaa"
 
 # Secrets (set via wrangler secret put):
 # OPENROUTER_API_KEY

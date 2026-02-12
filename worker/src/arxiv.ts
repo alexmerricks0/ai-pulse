@@ -13,7 +13,7 @@ export interface ArxivPaper {
 
 export async function fetchArxivPapers(): Promise<ArxivPaper[]> {
   const query = encodeURIComponent('cat:cs.AI OR cat:cs.LG');
-  const url = `http://export.arxiv.org/api/query?search_query=${query}&sortBy=submittedDate&sortOrder=descending&max_results=20`;
+  const url = `https://export.arxiv.org/api/query?search_query=${query}&sortBy=submittedDate&sortOrder=descending&max_results=20`;
 
   const response = await fetch(url);
   if (!response.ok) {
