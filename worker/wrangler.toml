@@ -1,0 +1,31 @@
+name = "ai-pulse-worker"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+
+[triggers]
+crons = ["0 7 * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ai-pulse-db"
+database_id = "TBD"
+
+[vars]
+ENVIRONMENT = "development"
+ALLOWED_ORIGINS = "http://localhost:5173,https://ai.lfxai.dev,https://ai-pulse.pages.dev"
+
+[env.production]
+name = "ai-pulse-worker"
+
+[env.production.vars]
+ENVIRONMENT = "production"
+ALLOWED_ORIGINS = "https://ai.lfxai.dev,https://ai-pulse.pages.dev"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "ai-pulse-db"
+database_id = "TBD"
+
+# Secrets (set via wrangler secret put):
+# OPENROUTER_API_KEY
+# GITHUB_TOKEN (optional)
