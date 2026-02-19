@@ -3,7 +3,7 @@ main = "src/index.ts"
 compatibility_date = "2024-12-01"
 
 [triggers]
-crons = ["0 7 * * *"]
+crons = ["0 7 * * *", "0 10 * * 1"]
 
 [[d1_databases]]
 binding = "DB"
@@ -13,6 +13,9 @@ database_id = "9b0d35d9-b64c-4beb-98b9-f2034d964eaa"
 [vars]
 ENVIRONMENT = "development"
 ALLOWED_ORIGINS = "http://localhost:5173,https://ai.lfxai.dev,https://ai-pulse-7ud.pages.dev"
+SITE_NAME = "AI Pulse"
+SITE_URL = "https://ai.lfxai.dev"
+SENDER_EMAIL = "alex@lfxai.dev"
 
 [env.production]
 name = "ai-pulse-worker"
@@ -20,6 +23,9 @@ name = "ai-pulse-worker"
 [env.production.vars]
 ENVIRONMENT = "production"
 ALLOWED_ORIGINS = "https://ai.lfxai.dev,https://ai-pulse-7ud.pages.dev"
+SITE_NAME = "AI Pulse"
+SITE_URL = "https://ai.lfxai.dev"
+SENDER_EMAIL = "alex@lfxai.dev"
 
 [[env.production.d1_databases]]
 binding = "DB"
@@ -29,3 +35,5 @@ database_id = "9b0d35d9-b64c-4beb-98b9-f2034d964eaa"
 # Secrets (set via wrangler secret put):
 # OPENROUTER_API_KEY
 # GITHUB_TOKEN (optional)
+# RESEND_API_KEY
+# TRIGGER_SECRET

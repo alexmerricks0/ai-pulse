@@ -1,3 +1,5 @@
+import { NewsletterSignup } from './NewsletterSignup';
+
 export function About() {
   return (
     <div className="py-8 max-w-2xl">
@@ -31,6 +33,16 @@ export function About() {
           </div>
         ))}
       </div>
+
+      <h3 className="font-mono text-xs uppercase tracking-widest text-text-dim mb-4 mt-8">
+        Weekly Newsletter
+      </h3>
+
+      <p className="text-sm text-text-secondary mb-2">
+        Get the week's top AI stories and papers delivered to your inbox every Monday morning.
+      </p>
+
+      <NewsletterSignup />
 
       <h3 className="font-mono text-xs uppercase tracking-widest text-text-dim mb-4 mt-8">
         How it works
